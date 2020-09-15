@@ -1,0 +1,21 @@
+{
+  "name": "taro-deploy",
+  "version": "1.0.0",
+  "description": "Auto deploy taro app.",
+  "main": "cli.js",
+  "bin": {
+    "taro-deploy": "./cli.js"
+  },
+  "scripts": {
+  },
+  "author": "jackson.lin",
+  "license": "ISC",
+  "dependencies": {
+    "alipay-dev": "^0.4.15",
+    "dayjs": "^1.8.35",
+    "fs-extra": "^9.0.1",
+    "merge": "^1.2.1",
+    "miniprogram-ci": "^1.0.79",
+    "node-fetch": "^2.6.1"
+  }
+}
