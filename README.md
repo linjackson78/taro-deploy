@@ -24,7 +24,7 @@ taro-deploy 就是为了解决这个痛点出现的，它集成了支付宝和�
 
 可以看到除了发布生成的小程序二维码，推送消息里还附带了构建机器、构建分支、项目最近的 git commit 日志等，打包信息更清楚。
 
-NOTE: git commit 日志目前只会展示 `feat` 和 `fix` 关键词开头的 commit
+NOTE: git commit 日志目前只会展示 `feat` 和 `fix` 关键词开头的 commit
 
 # 适合我用吗？
 
@@ -60,14 +60,14 @@ npm i -g taro-deploy
 
 在你的 Taro 项目根目录新建一个 deploy-config.js 文件，按下述模版填入内容。
 
-这里需要配置的内容比较关键也比较多，成败在此一举了(」゜ロ゜)」
+这里需要配置的内容比较关键也比较多，成败在此一举了(」゜ロ゜)」
 
 ```js
 // deploy-config.js
 // 该文件应放在 Taro 项目的根目录下
 
 module.exports = {
-  // 构建结果的输出目录，该脚本产生的日志也会输出到这里
+  // 构建结果的输出目录，该脚本产生的日志也会输出到这里
   outDir: './deploy-out',
 
   // 微信相关配置
@@ -75,7 +75,7 @@ module.exports = {
     // 如果为 false，则不会运行微信的构建流程
     enable: true,
 
-    // Taro 编译后，微信程序包的输出路径
+    // 这里填你们配置的 Taro 编译后微信程序包的输出路径
     projectPath: './dist/weapp',
 
     // Step 2 里获得的私钥文件的存放路径
@@ -106,7 +106,7 @@ module.exports = {
     // 如果为 false，则不会运行支付宝的构建流程
     enable: true,
 
-    // Taro 编译后，支付宝程序包的输出路径
+    // 这里填你们配置的 Taro 编译后支付宝程序包的输出路径
     projectPath: './dist/alipay',
 
     // Step 2 里获得的私钥文件的存放路径
@@ -140,7 +140,7 @@ module.exports = {
   // 如果你只需要构建发布体验版小程序，则可忽略以下函数
   // 如果你需要构建发布预览版小程序，则需要实现该函数，将本地二维码图片文件转换为图片链接，否则无法将预览版二维码推送到钉钉群里
   // 其中 objectName 形如 {platform}-{timestamp}.jpg，作为建议保存的文件名
-  // filePath 为本地预览版二维码图片的地址
+  // filePath 为本地预览版二维码图片的路径
   uploadImage: async function(objectName, filePath) {
     return ''
     // 如果你使用阿里云 oss 作 cdn，可以参考以下代码进行上传
@@ -190,10 +190,10 @@ A: Taro 支持很多平台，但是 taro-deploy 目前只支持了微信和支�
 
 A: 先跑一遍 taro-deploy，等上传完成以后，就可以在微信小程序控制台网页的「版本控制」菜单里找到。
 
-### Q: 这个工具有问题可能会造成小程序的线上故障吗？
+### Q: 这个工具如果出 bug 了，会造成小程序的线上故障吗？
 
 A: taro-deploy 目前只支持发布预览版和体验版，不支持发布生产版，不会影响到生产环境。
 
-### Q: 我想定制钉钉推送消息的模版
+### Q: 我想定制钉钉推送消息的内容
 
 A: 目前没有开放很灵活的钉钉消息模版配置，如有需要可以 fork 本项目并定制修改 send-ding.js 文件，也欢迎提交 PR。

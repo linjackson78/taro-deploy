@@ -27,6 +27,7 @@ let absConfigDir = path.dirname(absConfigPath)
 
 if (!fs.existsSync(absConfigPath)) {
   log(`配置文件 ${absConfigPath} 不存在`)
+  process.exit(1)
 }
 
 const defaultConfig = require('./defaultConfig')
