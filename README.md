@@ -47,7 +47,7 @@ npm i -g taro-deploy
 
 ## Step 2 - 平台相关的准备步骤
 
-1. 支付宝：参考[官方文档](https://opendocs.alipay.com/mini/alipaydev)，准备好私钥和 toolId。
+1. 支付宝：参考[官方文档](https://opendocs.alipay.com/mini/miniu/command-intro#%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE)，准备好私钥和 toolId。
 2. 微信：参考[官方文档](https://developers.weixin.qq.com/miniprogram/dev/devtools/ci.html)，准备好私钥
 
 ## Step 3 - 创建钉钉机器人
